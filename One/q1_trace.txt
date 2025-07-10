@@ -1,0 +1,49 @@
+execve("./q1", ["./q1"], 0x7ffc50fb4600 /* 27 vars */) = 0
+brk(NULL)                               = 0x5f52bde76000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffd6a416fe0) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x78d46c23f000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=20940, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 20940, PROT_READ, MAP_PRIVATE, 3, 0) = 0x78d46c239000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\325\31p\226\367\t\200\30)\261\30\257\33|\366c"..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2264656, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x78d46c000000
+mprotect(0x78d46c028000, 2023424, PROT_NONE) = 0
+mmap(0x78d46c028000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x78d46c028000
+mmap(0x78d46c1bd000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x78d46c1bd000
+mmap(0x78d46c216000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x215000) = 0x78d46c216000
+mmap(0x78d46c21c000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x78d46c21c000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x78d46c236000
+arch_prctl(ARCH_SET_FS, 0x78d46c236740) = 0
+set_tid_address(0x78d46c236a10)         = 1163
+set_robust_list(0x78d46c236a20, 24)     = 0
+rseq(0x78d46c2370e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x78d46c216000, 16384, PROT_READ) = 0
+mprotect(0x5f52861a3000, 4096, PROT_READ) = 0
+mprotect(0x78d46c279000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x78d46c239000, 20940)           = 0
+openat(AT_FDCWD, "tempfile.txt", O_RDWR|O_CREAT, 0644) = 3
+write(3, "This is a temp file.\n", 21)  = 21
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "This is a temp file.\n", 256)  = 21
+newfstatat(1, "", {st_mode=S_IFCHR|0600, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+getrandom("\x2a\x38\x48\xe2\x9d\xf4\x03\x42", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x5f52bde76000
+brk(0x5f52bde97000)                     = 0x5f52bde97000
+write(1, "Parent read: This is a temp file"..., 34) = 34
+close(3)                                = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x78d46c236a10) = 1164
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 1164
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=1164, si_uid=0, si_status=0, si_utime=0, si_stime=0} ---
+write(1, "Child completed.\n", 17)      = 17
+exit_group(0)                           = ?
++++ exited with 0 +++
