@@ -20,7 +20,7 @@ Create a child process that executes a system command (e.g., `ls`) using `fork()
 strace ./q1_exec
 ```
 
-Task 2: Logging Utility – Buffered vs Unbuffered I/O
+## Task 2: Logging Utility – Buffered vs Unbuffered I/O
 Objective:
 Implement two logging versions to write 1,000,000 timestamped entries to a file:
 
@@ -45,7 +45,7 @@ strace -c ./log_buffered
 Expected Results:
 Buffered I/O should yield fewer system calls and better performance due to internal buffering.
 
-Task 3: Multithreaded Palindromic Counter
+## Task 3: Multithreaded Palindromic Counter
 Objective:
 Count all palindromic numbers between 0 and 100,000 using 20 threads.
 
@@ -61,7 +61,7 @@ Expected Output:
 The synchronized total number of palindromic numbers from 0 to 100000 is <total>
 
 
-Task 4: Multi-threaded Log File Merger
+## Task 4: Multi-threaded Log File Merger
 Objective:
 Merge multiple log files into a single output file using multiple threads, ensuring thread-safe file writes.
 
